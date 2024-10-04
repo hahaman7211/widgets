@@ -34,17 +34,17 @@ public class Mytest {
 		engine.fill(FuelType.COAL, 50);
 		WidgetMachine widgetMachine = new WidgetMachine(engine);
 		double cost = widgetMachine.produceWidgets(3);
-		Assert.assertEquals(cost, 5.65*2, 0.001);
+		Assert.assertEquals(cost, 5.65 * 2, 0.001);
 
 	}
-	
+
 	@Test
 	public void testCost3() {
 		Engine engine = new InternalCombustionEngine(FuelType.PETROL);
 		WidgetMachine widgetMachine = new WidgetMachine(engine);
 		engine.fill(FuelType.PETROL, 50);
 		double cost = widgetMachine.produceWidgets(9);
-		Assert.assertEquals(cost, 9*2, 0.001);
+		Assert.assertEquals(cost, 9 * 2, 0.001);
 
 	}
 
@@ -67,7 +67,6 @@ public class Mytest {
 		exceptions.expect(Exception.class);
 		exceptions.expectMessage("Not able to start engine.");
 		double cost = widgetMachine.produceWidgets(2);
-		
 
 	}
 

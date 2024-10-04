@@ -6,29 +6,26 @@ public class SteamEngine extends Engine {
 		super();
 		if (requiredFuelType == FuelType.WOOD || requiredFuelType == FuelType.COAL) {
 			this.requiredFuelType = requiredFuelType;
-		} 
-		else {
+		} else {
 			throw new IllegalStateException("Wrong FuelType");
 		}
-		
+
 		this.batchSize = 2;
-		
+
 	}
 
 	@Override
-    public void fill(FuelType fuelType, int fuelLevel) {
-        if (fuelLevel >= 0 && fuelLevel <= 100) {
-            this.fuelLevel = fuelLevel;
-        }
-        else if (fuelLevel > 100) {
-            this.fuelLevel = 100;
-        }
-        else {
-            this.fuelLevel = 0;
-        }
+	public void fill(FuelType fuelType, int fuelLevel) {
+		if (fuelLevel >= 0 && fuelLevel <= 100) {
+			this.fuelLevel = fuelLevel;
+		} else if (fuelLevel > 100) {
+			this.fuelLevel = 100;
+		} else {
+			this.fuelLevel = 0;
+		}
 
-        this.fuelType = fuelType;
-    }
+		this.fuelType = fuelType;
+	}
 
 	@Override
 	public double getCostPerBatch() {
@@ -39,6 +36,5 @@ public class SteamEngine extends Engine {
 			return 5.65;
 		}
 	}
-	
 
 }

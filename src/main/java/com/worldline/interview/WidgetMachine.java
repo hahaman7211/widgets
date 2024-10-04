@@ -39,7 +39,7 @@ public class WidgetMachine {
 			batch = batch + engine.getBatchSize();
 			batchCount++;
 		}
-		
+
 		System.out.println("batch:" + batch);
 
 		return batchCount * costPerBatch;
